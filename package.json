@@ -2,7 +2,7 @@
   "author": "Alex Wayne (alexwayne.tumblr.com)",
   "name": "coffeeson",
   "description": "Like json, but with coffee script",
-  "homepage": "https://github.com/Squeegy/coffeeson.npm",
+  "homepage": "http://github.com/Squeegy/coffeeson.npm",
   "version": "0.0.1",
   "repository": {
     "type": "git",
