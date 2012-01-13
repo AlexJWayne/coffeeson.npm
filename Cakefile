@@ -16,6 +16,4 @@ task 'test', 'Run the tests', ->
   mocha.on 'exit', -> console.log result
 
 task 'build', 'Build the package.json file', ->
-  
-  fs.readFile 'package.coffeeson', (err, src) ->
-    coffeeson.convertFilePretty 'package.coffeeson'
+  coffeeson.convertFilePretty 'package.coffeeson'
