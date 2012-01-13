@@ -59,8 +59,8 @@ describe 'coffeeson', ->
     result = coffeeson.toJSON src.complex
     result.should.equal json.complex
 
-  it '.toPrettyJSON() returns pretty indented json', ->
-    result = coffeeson.toPrettyJSON src.complex
+  it '.toJSON.pretty() returns pretty indented json', ->
+    result = coffeeson.toJSON.pretty src.complex
     result.should.equal json.complexPretty
 
   it '.fileToJSON() async reads of a coffeeson file on disk, returning equivalent JSON', (done) ->
@@ -68,8 +68,8 @@ describe 'coffeeson', ->
       result.should.equal json.complex
       done()
 
-  it '.fileToPrettyJSON() async reads of a coffeeson file on disk, returning equivalent pretty JSON', (done) ->
-    coffeeson.fileToPrettyJSON 'test/sample.coffeeson', (err, result) ->
+  it '.fileToJSON.pretty() async reads of a coffeeson file on disk, returning equivalent pretty JSON', (done) ->
+    coffeeson.fileToJSON.pretty 'test/sample.coffeeson', (err, result) ->
       result.should.equal json.complexPretty
       done()
 
@@ -89,8 +89,8 @@ describe 'coffeeson', ->
           # Cleanup our mess
           fs.unlink 'test/sample.json', done
 
-  it '.convertFilePretty() async reads a coffeeson file and writes a pretty json file right next to it', (done) ->
-    coffeeson.convertFilePretty 'test/sample.coffeeson', (err) ->
+  it '.convertFile.pretty() async reads a coffeeson file and writes a pretty json file right next to it', (done) ->
+    coffeeson.convertFile.pretty 'test/sample.coffeeson', (err) ->
       # ensure no error
       err.should.not.be.ok
       
@@ -104,4 +104,3 @@ describe 'coffeeson', ->
           
           # Cleanup our mess
           fs.unlink 'test/sample.json', done
-            

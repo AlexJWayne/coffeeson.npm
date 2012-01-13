@@ -17,4 +17,4 @@ task 'test', 'Run the tests', ->
 
 task 'build', 'Build the package.json file', ->
   easySpawn 'coffee -c lib'
-  coffeeson.convertFilePretty 'package.coffeeson'
+  coffeeson.convertFile.pretty 'package.coffeeson'

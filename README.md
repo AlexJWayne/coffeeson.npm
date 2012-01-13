@@ -97,17 +97,17 @@ Parse a coffeeson string and return an equivalent JSON string.
 
     coffeeson.toJSON 'a:123' #=> '{"a":123}'
 
-**.toPrettyJSON(src)**
+**.toJSON.pretty(src)**
 
 Parse a coffeeson string and return an equivalent JSON string, nicely indented.
 
-    coffeeson.toPrettyJSON 'a:b:123' #=> '''
-                                         {
-                                           "a": {
-                                             "b": 123
-                                           }
-                                         }
-                                         '''
+    coffeeson.toJSON.pretty 'a:b:123' #=> '''
+                                          {
+                                            "a": {
+                                              "b": 123
+                                            }
+                                          }
+                                          '''
 
 **.fileToJSON(path, callback(err, json))**
 
@@ -116,11 +116,11 @@ Asynchronously read a file and callback with the content as JSON.
     coffeeson.fileToJSON 'config.coffeeson', (err, json) ->
       json #=> '{"a":{"b":123}}'
 
-**.fileToPrettyJSON(path, callback(err, json))**
+**.fileToJSON.pretty(path, callback(err, json))**
 
 Asynchronously read a file and callback with the content as pretty and indented JSON.
 
-    coffeeson.fileToPrettyJSON 'config.coffeeson', (err, json) ->
+    coffeeson.fileToJSON.pretty 'config.coffeeson', (err, json) ->
       json #=> '''
                {
                  "a": {
@@ -136,11 +136,11 @@ Asynchronously read a file and save a .json file right next the source file.
     coffeeson.convertFile 'config.coffeeson', (err) ->
       # "config.json" now contains JSON version of "config.coffeeson"
 
-**.convertFilePretty(path, [callback(err)])**
+**.convertFile.pretty(path, [callback(err)])**
 
 Asynchronously read a file and save a pretty and indented .json file right next the source file.  Works exactly like `convertFile()`
 
-    coffeeson.convertFilePretty 'config.coffeeson', (err) ->
+    coffeeson.convertFile.pretty 'config.coffeeson', (err) ->
       # "config.json" now contains pretty JSON version of "config.coffeeson"
 
 

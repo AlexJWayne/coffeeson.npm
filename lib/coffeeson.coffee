@@ -21,7 +21,7 @@ toJSON = (src, replacer, spacer) ->
   JSON.stringify parse(src), replacer, spacer
 
 # Parse a coffeeson string and return pretty JSON
-toPrettyJSON = (src, replacer) ->
+toJSON.pretty = (src, replacer) ->
   toJSON src, replacer, 2
 
 # Asynchronously read a file and callback with the content as JSON
@@ -33,7 +33,7 @@ fileToJSON = (name, args..., cb) ->
   return
 
 # Asynchronously read a file and callback with the content as pretty JSON
-fileToPrettyJSON = (name, cb) ->
+fileToJSON.pretty = (name, cb) ->
   fileToJSON name, null, 2, cb
 
 # Asynchronously read a file and save a .json file right next the source file
@@ -46,7 +46,7 @@ convertFile = (name, args..., cb) ->
   return
 
 # Asynchronously read a file and save a pretty .json file right next the source file
-convertFilePretty = (name, cb) ->
+convertFile.pretty = (name, cb) ->
   convertFile name, null, 2, cb
 
 # Export methods
@@ -54,9 +54,6 @@ module.exports = {
   parse
   parseFile
   toJSON
-  toPrettyJSON
   fileToJSON
-  fileToPrettyJSON
   convertFile
-  convertFilePretty
 }
