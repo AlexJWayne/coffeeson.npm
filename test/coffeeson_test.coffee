@@ -1,4 +1,4 @@
-coffeeson = require '../coffeeson'
+coffeeson = require '../lib/coffeeson'
 fs        = require 'fs'
 path      = require 'path'
 

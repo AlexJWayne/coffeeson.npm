@@ -1,4 +1,4 @@
-coffeeson = require './coffeeson'
+coffeeson = require './lib/coffeeson'
 spawn     = require('child_process').spawn
 fs        = require 'fs'
 
