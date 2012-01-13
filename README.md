@@ -78,5 +78,66 @@ With the npm module installed, simply require it.
 API
 ---
 
-* `coffeeson.parse(coffeesonString)`
-  Parse a coffeeson string and return a JS native object
+`.parse(coffeesonString)`
+Simply parse a coffeeson string and return a JS native object.
+
+    coffeeson.parse('a:123').a #=> 123
+
+`.parseFile(path)`
+Asynchronously parse a coffeeson file and return a JS native object.
+
+    coffeeson.parseFile 'config.coffeeson', (err, result) ->
+      result.a #=> 123
+
+`.toJSON(src)`
+Parse a coffeeson string and return an equivalent JSON string.
+
+    coffeeson.toJSON 'a:123' #=> '{"a":123}'
+
+`.toPrettyJSON(src)`
+Parse a coffeeson string and return an equivalent JSON string, nicely indented.
+
+    coffeeson.toPrettyJSON 'a:b:123' #=> '''
+                                         {
+                                           "a": {
+                                             "b": 123
+                                           }
+                                         }
+                                         '''
+
+`.fileToJSON(path, [callback(err, json)])
+Asynchronously read a file and callback with the content as JSON.
+
+    coffeeson.fileToJSON 'config.coffeeson', (err, json) ->
+      json #=> '{"a":{"b":123}}'
+
+`.fileToPrettyJSON(path, [callback(err, json)])`
+Asynchronously read a file and callback with the content as pretty and indented JSON.
+
+    coffeeson.fileToPrettyJSON 'config.coffeeson', (err, json) ->
+      json #=> '''
+               {
+                 "a": {
+                   "b": 123
+                 }
+               }
+               '''
+
+`.convertFile(path, [callback(err)])`
+Asynchronously read a file and save a .json file right next the source file.
+
+    coffeeson.convertFile 'config.coffeeson', (err) ->
+      # "config.json" now contains JSON version of "config.coffeeson"
+
+`.convertFilePretty(path, [callback(err)])`
+Asynchronously read a file and save a pretty and indented .json file right next the source file.  Works exactly like `convertFile()`
+
+
+
+
+
+
+
+
+
+

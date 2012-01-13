@@ -10,6 +10,12 @@ compile = (src) ->
 parse = (src) ->
   eval compile(src)
 
+# Parse a coffeeson file and return a JS native object
+parseFile = (name, cb) ->
+  fs.readFile name, (err, src) ->
+    return cb err if err
+    cb no, parse(src)
+
 # Parse a coffeeson string and return JSON
 toJSON = (src, replacer, spacer) ->
   JSON.stringify parse(src), replacer, spacer
@@ -46,6 +52,7 @@ convertFilePretty = (name, cb) ->
 # Export methods
 module.exports = {
   parse
+  parseFile
   toJSON
   toPrettyJSON
   fileToJSON

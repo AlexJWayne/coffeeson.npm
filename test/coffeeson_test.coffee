@@ -47,7 +47,14 @@ describe 'coffeeson', ->
   it '.parse() parses coffeeson', ->
     result = coffeeson.parse src.complex
     JSON.stringify(result).should.equal json.complex
-
+  
+  it '.parseFile() parses a coffeeson file and returns a native JS object', (done) ->
+    coffeeson.parseFile 'test/sample.coffeeson', (err, result) ->
+      err.should.not.be.ok
+      JSON.stringify(result).should.equal json.complex
+      done()
+    
+  
   it '.toJSON() jsonifies coffeeson', ->
     result = coffeeson.toJSON src.complex
     result.should.equal json.complex
