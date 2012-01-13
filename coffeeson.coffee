@@ -23,7 +23,7 @@ fileToJSON = (name, args..., cb) ->
   fs.readFile name, (err, src) ->
     if cb
       return cb err if err
-      cb null, toJSON(src, args...)
+      cb no, toJSON(src, args...)
   return
 
 # Asynchronously read a file and callback with the content as pretty JSON
@@ -36,7 +36,7 @@ convertFile = (name, args..., cb) ->
     fs.writeFile name.replace(/\.coffeeson$/, '.json'), json, (err) ->
       if cb
         return cb err if err
-        cb null, json
+        cb no, json
   return
 
 # Asynchronously read a file and save a pretty .json file right next the source file

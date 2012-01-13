@@ -69,7 +69,7 @@ describe 'coffeeson', ->
   it '.convertFile() async reads a coffeeson file and writes a json file right next to it', (done) ->
     coffeeson.convertFile 'test/sample.coffeeson', (err) ->
       # ensure no error
-      (!!err).should.not.be.ok # should.js wtf?
+      err.should.not.be.ok
       
       # Ensure the file was written
       path.exists 'test/sample.json', (exists) ->
@@ -85,7 +85,7 @@ describe 'coffeeson', ->
   it '.convertFilePretty() async reads a coffeeson file and writes a pretty json file right next to it', (done) ->
     coffeeson.convertFilePretty 'test/sample.coffeeson', (err) ->
       # ensure no error
-      (!!err).should.not.be.ok # should.js wtf?
+      err.should.not.be.ok
       
       # Ensure the file was written
       path.exists 'test/sample.json', (exists) ->
