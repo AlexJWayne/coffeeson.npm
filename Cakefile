@@ -16,4 +16,5 @@ task 'test', 'Run the tests', ->
   mocha.on 'exit', -> console.log result
 
 task 'build', 'Build the package.json file', ->
+  easySpawn 'coffee -c lib'
   coffeeson.convertFilePretty 'package.coffeeson'
