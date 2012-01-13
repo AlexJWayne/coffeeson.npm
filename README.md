@@ -78,23 +78,27 @@ With the npm module installed, simply require it.
 API
 ---
 
-`.parse(coffeesonString)`
+**.parse(coffeesonString)**
+
 Simply parse a coffeeson string and return a JS native object.
 
     coffeeson.parse('a:123').a #=> 123
 
-`.parseFile(path)`
+**.parseFile(path)**
+
 Asynchronously parse a coffeeson file and return a JS native object.
 
     coffeeson.parseFile 'config.coffeeson', (err, result) ->
       result.a #=> 123
 
-`.toJSON(src)`
+**.toJSON(src)**
+
 Parse a coffeeson string and return an equivalent JSON string.
 
     coffeeson.toJSON 'a:123' #=> '{"a":123}'
 
-`.toPrettyJSON(src)`
+**.toPrettyJSON(src)**
+
 Parse a coffeeson string and return an equivalent JSON string, nicely indented.
 
     coffeeson.toPrettyJSON 'a:b:123' #=> '''
@@ -105,13 +109,15 @@ Parse a coffeeson string and return an equivalent JSON string, nicely indented.
                                          }
                                          '''
 
-`.fileToJSON(path, [callback(err, json)])
+**.fileToJSON(path, callback(err, json))**
+
 Asynchronously read a file and callback with the content as JSON.
 
     coffeeson.fileToJSON 'config.coffeeson', (err, json) ->
       json #=> '{"a":{"b":123}}'
 
-`.fileToPrettyJSON(path, [callback(err, json)])`
+**.fileToPrettyJSON(path, callback(err, json))**
+
 Asynchronously read a file and callback with the content as pretty and indented JSON.
 
     coffeeson.fileToPrettyJSON 'config.coffeeson', (err, json) ->
@@ -123,15 +129,19 @@ Asynchronously read a file and callback with the content as pretty and indented 
                }
                '''
 
-`.convertFile(path, [callback(err)])`
+**.convertFile(path, [callback(err)])**
+
 Asynchronously read a file and save a .json file right next the source file.
 
     coffeeson.convertFile 'config.coffeeson', (err) ->
       # "config.json" now contains JSON version of "config.coffeeson"
 
-`.convertFilePretty(path, [callback(err)])`
+**.convertFilePretty(path, [callback(err)])**
+
 Asynchronously read a file and save a pretty and indented .json file right next the source file.  Works exactly like `convertFile()`
 
+    coffeeson.convertFilePretty 'config.coffeeson', (err) ->
+      # "config.json" now contains pretty JSON version of "config.coffeeson"
 
 
 
