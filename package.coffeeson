@@ -1,11 +1,32 @@
 author: 'Alex Wayne (alexwayne.tumblr.com)'
 name: 'coffeeson'
 description: 'Like json, but with coffee script'
+homepage: 'https://github.com/Squeegy/coffeeson.npm'
 version: '0.0.1'
-repository:
-  url: 'https://github.com/Squeegy/coffeeson.npm'
 
-main: "lib/coffeeson.js"
+repository:
+  type: 'git'
+  url: 'git://github.com/Squeegy/coffeeson.npm.git'
+
+bugs:
+	web: 'https://github.com/balupton/cson.npm/issues'
+
+licenses: [
+  type: 'MIT'
+  url: 'http://creativecommons.org/licenses/MIT/'
+]
+
+keywords: [
+	'javascript'
+	'coffeescript'
+	'json'
+	'coffeeson'
+]
+
+directories:
+	lib: 'lib'
+
+main: "./lib/coffeeson"
 scripts:
   test: 'cake test'
 
