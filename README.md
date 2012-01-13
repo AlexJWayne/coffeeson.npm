@@ -84,7 +84,7 @@ Simply parse a coffeeson string and return a JS native object.
 
     coffeeson.parse('a:123').a #=> 123
 
-**.parseFile(path)**
+**.parseFile(path, callback(err, result))**
 
 Asynchronously parse a coffeeson file and return a JS native object.
 
