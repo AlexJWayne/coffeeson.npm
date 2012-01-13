@@ -4,7 +4,7 @@
   "description": "Like json, but with coffee script",
   "version": "0.0.1",
   "repository": {
-    "url": "https://github.com/Squeegy/CoffeeSON"
+    "url": "https://github.com/Squeegy/coffeeson.npm"
   },
   "main": "lib/coffeeson.js",
   "scripts": {
