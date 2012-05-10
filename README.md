@@ -144,10 +144,7 @@ Asynchronously read a file and save a pretty and indented .json file right next 
       # "config.json" now contains pretty JSON version of "config.coffeeson"
 
 
+License
+-------
 
-
-
-
-
-
-
+WTFPL
