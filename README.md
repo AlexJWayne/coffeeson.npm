@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/Squeegy/coffeeson.npm.png)](http://travis-ci.org/Squeegy/coffeeson.npm)
 COFFESON
 ========
 
